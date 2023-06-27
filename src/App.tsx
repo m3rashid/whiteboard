@@ -1,11 +1,11 @@
-import { Component, createMemo, For } from "solid-js";
+import { Component, createMemo, For } from 'solid-js';
 
-import Menu from "./components/Menu";
-import { createSettings } from "./SettingsProvider";
-import { createTheme } from "./ThemeProvider";
-import { createWhiteboard } from "./whiteboard";
+import Menu from './components/Menu';
+import { createSettings } from './SettingsProvider';
+import { createTheme } from './ThemeProvider';
+import { createWhiteboard } from './whiteboard';
 
-import styles from "./App.module.css";
+import styles from './App.module.css';
 
 const App: Component = () => {
   const {
@@ -21,7 +21,7 @@ const App: Component = () => {
     currentPath,
   } = createWhiteboard();
   const [theme] = createTheme();
-  const color = createMemo(() => (theme() === "dark" ? "#FFF" : "#000"));
+  const color = createMemo(() => (theme() === 'dark' ? '#FFF' : '#000'));
   const { isDrawing } = createSettings();
 
   return (
@@ -32,6 +32,10 @@ const App: Component = () => {
         handleUndo={handleUndo}
         isDrawing={isDrawing}
       />
+      <h1 class='text-indigo-500 dark:text-indigo-400 z-50 shadow-sm text-center sm:text-left absolute px-4 py-3 font-bold text-lg font-mono'>
+        SCRIBBLE BOARD
+      </h1>
+
       <svg
         class={styles.drawableSvg}
         onPointerUp={handlePointerUp}

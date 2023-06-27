@@ -1,8 +1,9 @@
-import { createSignal, createMemo, createEffect } from "solid-js";
-import getStroke from "perfect-freehand";
+import { createSignal, createMemo, createEffect } from 'solid-js';
+import getStroke from 'perfect-freehand';
 
-import { createSettings } from "./SettingsProvider";
-import { getInitialData, getSvgPathFromStroke } from "./utils";
+import { createSettings } from './SettingsProvider';
+import { getInitialData, getSvgPathFromStroke } from './utils';
+import { redo, undo } from './components/keyboard';
 
 const initialPointsData = {
   allPoints: [] as [number, number, number][][],
@@ -11,14 +12,14 @@ const initialPointsData = {
 
 export function createWhiteboard() {
   let history = [
-    getInitialData<typeof initialPointsData>("points", initialPointsData),
+    getInitialData<typeof initialPointsData>('points', initialPointsData),
   ];
   let historyStep = 0;
   const [points, setPoints] = createSignal(history[0]);
   const { setIsDrawing, isDrawing, settings } = createSettings();
 
   createEffect(() => {
-    localStorage.setItem("points", JSON.stringify(points()));
+    localStorage.setItem('points', JSON.stringify(points()));
   });
 
   const handlePointerDown = (e: PointerEvent) => {
@@ -85,8 +86,8 @@ export function createWhiteboard() {
     setPoints(next);
   };
 
-  const handleReset = async () => {
-    const result = await window.confirm("Are you sure?");
+  const handleReset = () => {
+    const result = window.confirm('Are you sure you want to reset ?');
     if (result) {
       history = [initialPointsData];
       historyStep = 0;
@@ -104,6 +105,9 @@ export function createWhiteboard() {
     if (!points().currentPoints) return null;
     return getSvgPathFromStroke(getStroke(points().currentPoints, settings()));
   });
+
+  undo(handleUndo);
+  redo(handleRedo);
 
   return {
     handlePointerDown,

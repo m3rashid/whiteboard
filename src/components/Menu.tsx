@@ -21,9 +21,9 @@ const Menu: Component<Props> = (props) => {
   const [isOpen, setIsOpen] = createSignal(false);
 
   return (
-    <div class='flex items-start justify-end w-full z-10 absolute mt-2 pointer-events-none'>
+    <div class='flex items-start justify-end w-full z-10 absolute mt-12 sm:mt-3 pointer-events-none'>
       <div
-        class={`mr-2 ${
+        class={`mx-auto sm:mr-3 ${
           props.isDrawing() ? 'pointer-events-none' : 'pointer-events-auto'
         }`}
       >
