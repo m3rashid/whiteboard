@@ -1,7 +1,11 @@
 .label {
-  @apply text-xs font-medium;
+  @apply text-sm capitalize font-medium;
 }
 
 .range {
   @apply w-full;
+}
+
+.upperDiv {
+  @apply w-full flex flex-col mt-3 mb-2;
 }

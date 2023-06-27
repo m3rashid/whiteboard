@@ -13,6 +13,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@solid-primitives/keyboard": "^1.2.3",
     "perfect-freehand": "^1.1.0",
     "solid-js": "^1.4.8"
   },

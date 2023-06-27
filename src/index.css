@@ -16,5 +16,5 @@
 }
 
 .btn {
-  @apply p-2 text-gray-700 hover:text-gray-200 dark:text-gray-200 transform bg-gray-200 rounded dark:bg-gray-800 hover:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none;
+  @apply p-2 text-gray-700 hover:text-gray-900 dark:text-gray-200 transform bg-white rounded dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none;
 }
