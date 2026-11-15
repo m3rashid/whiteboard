@@ -1,14 +1,23 @@
-# Whiteboard
+<div align="center">
 
-Collaborative whiteboard app. Draw freehand and share.
+# 🎨 Whiteboard
+
+**Collaborative whiteboard — draw freehand and share.**
+
+[![SolidJS](https://img.shields.io/badge/SolidJS-1.4-2C4F7C?logo=solid&logoColor=white)](https://solidjs.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ![Preview](./src/assets/whiteboard.png)
 
-## Tech
+</div>
 
-SolidJS · perfect-freehand · Tailwind · Vite
+---
 
-## Quick start
+## 🛠 Tech
+
+`SolidJS` · `perfect-freehand` · `Tailwind` · `Vite`
+
+## 📦 Quick start
 
 ```bash
 git clone https://github.com/m3rashid/whiteboard.git
@@ -17,6 +26,6 @@ yarn install
 yarn dev
 ```
 
-## License
+## 📄 License
 
 MIT
