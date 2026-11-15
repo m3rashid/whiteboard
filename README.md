@@ -1,5 +1,18 @@
-### Whiteboard
+# Whiteboard
 
-![Preview](./src/assets/whiteboard.png)
+Collaborative whiteboard. Draw and share.
 
-Whiteboard is a simple whiteboard application that allows you to draw on a whiteboard and share it with your friends.
+## Tech
+
+SolidJS · perfect-freehand · Tailwind · Vite
+
+## Quick start
+
+```bash
+yarn install
+yarn dev
+```
+
+## License
+
+MIT
